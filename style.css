@@ -143,13 +143,17 @@ nav a {
     border-radius: 8px;
 }
 
-.mantra {
-    font-family: 'Noto Serif Devanagari', serif;
-    font-size: clamp(20px, 4vw, 26px);
-    margin-bottom: 10px;
-    color: #f4e6c5;
-    font-weight: 600;
-}
+ .mantra {
+      font-family: 'Noto Serif Devanagari', serif;
+      font-size: clamp(1.8rem, 6vw, 2.8rem);
+      color: var(--accent-saffron);
+      margin-bottom: 0.8rem;
+      animation: glowPulse 4s ease-in-out infinite alternate;
+    }
+    @keyframes glowPulse {
+      0% { text-shadow: 0 0 10px rgba(255,153,51,0.4); }
+      100% { text-shadow: 0 0 28px rgba(255,153,51,0.7); }
+    }
 
 .jayghosh {
     margin: 8px auto;
@@ -164,7 +168,7 @@ nav a {
     animation: scrollText 15s linear infinite;
     font-family: 'Noto Serif Devanagari', serif;
     font-size: clamp(14px, 3vw, 16px);
-    color: #e6d7b0;
+    /* color: #e6d7b0; */
 }
 
 .jayghosh-2 span {
@@ -511,15 +515,6 @@ footer {
     
     .map-embed {
         height: 200px;
-    }
-    
-    .btn {
-        gap: 6px;
-    }
-    
-    .btn a {
-        padding: 5px 10px;
-        font-size: 11px;
     }
     
     .gallery {
