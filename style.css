@@ -1,0 +1,341 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #fdf9f2;
+    color: #2f2a26;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(15,45,55,0.96);
+    display: flex;
+    justify-content: space-around;
+    padding: 12px 0;
+    z-index: 1000;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: #f4e6c5;
+    text-decoration: none;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.mobile-menu-btn {
+    display: none;
+    position: fixed;
+    top: 15px;
+    right: 20px;
+    z-index: 1001;
+    background: rgba(15,45,55,0.96);
+    color: #f4e6c5;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.mobile-sidebar {
+    position: fixed;
+    top: 0;
+    right: -250px;
+    width: 250px;
+    height: 100vh;
+    background: rgba(15,45,55,0.98);
+    z-index: 1002;
+    transition: right 0.3s ease;
+    padding-top: 60px;
+}
+
+.mobile-sidebar.active {
+    right: 0;
+}
+
+.mobile-sidebar a {
+    display: block;
+    color: #f4e6c5;
+    text-decoration: none;
+    padding: 15px 20px;
+    border-bottom: 1px solid rgba(244,230,197,0.1);
+    font-size: 16px;
+}
+
+.mobile-sidebar a:hover {
+    background: rgba(244,230,197,0.1);
+}
+
+.mobile-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1001;
+    display: none;
+}
+
+.mobile-overlay.active {
+    display: block;
+}
+
+header {
+    min-height: 100vh;
+    padding: 80px 20px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: radial-gradient(circle at top, #0f2f38, #07181d);
+    color: #fff;
+}
+
+#guruPage header {
+    padding: 90px 20px 40px;
+    text-align: center;
+    background: radial-gradient(circle at top, #0f2f38, #07181d);
+    color: #fff;
+    min-height: auto;
+    display: block;
+    align-items: unset;
+    justify-content: unset;
+}
+
+#guruPage header h1 {
+    font-family: 'Noto Serif Devanagari', serif;
+    font-size: clamp(24px, 5vw, 32px);
+    margin: 0;
+}
+
+#guruPage header p {
+    max-width: 700px;
+    margin: 10px auto;
+    font-size: 15px;
+    line-height: 1.7;
+    color: #f0e7d4;
+}
+
+.btn {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 14px;
+    width: 100%;
+    max-width: 420px;
+}
+
+.btn a {
+    text-decoration: none;
+    background: #c89b3c;
+    color: #1d1a14;
+    padding: 12px 10px;
+    border-radius: 24px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.hero-content {
+    padding: 20px;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-content img {
+    width: min(270px, 90vw);
+    margin-bottom: 18px;
+    border-radius: 14px;
+    box-shadow: 0 14px 34px rgba(0,0,0,0.65);
+}
+
+.hindi-heading {
+    font-family: 'Noto Serif Devanagari', serif;
+    font-size: clamp(20px, 4vw, 26px);
+    margin-bottom: 10px;
+    color: #f4e6c5;
+}
+
+.hero-content h1 {
+    font-size: clamp(20px, 4vw, 28px);
+    margin: 15px 0;
+}
+
+.hero-content p {
+    font-size: clamp(14px, 3vw, 16px);
+    line-height: 1.6;
+    margin: 15px 0;
+}
+
+.marquee {
+    margin: 12px auto 18px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.marquee span {
+    display: inline-block;
+    padding-left: 100%;
+    animation: scrollText 18s linear infinite;
+    font-family: 'Noto Serif Devanagari', serif;
+    font-size: 16px;
+    color: #e6d7b0;
+}
+
+@keyframes scrollText {
+    from { transform: translateX(0); }
+    to { transform: translateX(-100%); }
+}
+
+.hero-btn {
+    display: inline-block;
+    margin-top: 16px;
+    background: #c89b3c;
+    color: #1d1a14;
+    padding: 10px 24px;
+    border-radius: 24px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+section {
+    padding: 60px 15px;
+}
+
+#guruPage section {
+    padding: 50px 15px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+}
+
+#guruPage .container {
+    max-width: 900px;
+    margin: auto;
+}
+
+.section-title {
+    text-align: center;
+    font-family: 'Noto Serif Devanagari', serif;
+    font-size: clamp(22px, 4vw, 28px);
+    margin-bottom: 28px;
+    color: #6b4c1e;
+}
+
+.card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: clamp(20px, 4vw, 30px);
+    margin-bottom: 28px;
+    box-shadow: 0 10px 26px rgba(0,0,0,0.08);
+}
+
+.card p {
+    font-size: clamp(14px, 2.5vw, 15px);
+    line-height: 1.7;
+    margin-bottom: 14px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+}
+
+.gallery img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+}
+
+footer {
+    background: #0f2f38;
+    color: #f4e6c5;
+    text-align: center;
+    padding: 30px 12px;
+    font-size: clamp(12px, 2.5vw, 14px);
+}
+
+.hidden {
+    display: none;
+}
+
+.guru-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: clamp(20px, 4vw, 30px);
+    margin-bottom: 30px;
+    box-shadow: 0 10px 26px rgba(0,0,0,0.08);
+    font-size: clamp(14px, 2.5vw, 16px);
+}
+
+.guru-card h2 {
+    font-family: 'Noto Serif Devanagari', serif;
+    color: #6b4c1e;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #6b4c1e;
+    font-size: clamp(14px, 2.5vw, 16px);
+}
+
+#guruPage:not(.hidden) ~ footer {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    nav {
+        display: none;
+    }
+    
+    .mobile-menu-btn {
+        display: block;
+    }
+    
+    header {
+        padding: 60px 15px 15px;
+    }
+    
+    #guruPage header {
+        padding: 70px 15px 30px;
+    }
+    
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 10px;
+    }
+    
+    .hero-btn {
+        padding: 8px 20px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .mobile-menu-btn {
+        top: 12px;
+        right: 15px;
+        font-size: 16px;
+    }
+    
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .marquee span {
+        font-size: 14px;
+    }
+}
