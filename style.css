@@ -1,9 +1,42 @@
-body {
+:root {
+      --primary-gold: #d4a017;
+      --gold-dark: #b8860b;
+      --accent-saffron: #ff9933;
+      --deep-indigo: #0f2c5e;
+      --text-dark: #3a2e1f;
+      --text-light: #5c4a3a;
+      --card-bg: rgba(255, 250, 240, 0.92);
+      --border-gold: rgba(212, 160, 23, 0.4);
+      --bg-overlay: linear-gradient(rgba(255, 250, 240, 0.88), rgba(248, 241, 233, 0.92));
+    }
+
+    * { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-image: url('https://wallkalakar.com/wp-content/uploads/2025/02/Pichwai-art-with-the-elegance-of-the-art-wallpaper.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: var(--bg-overlay);
+      z-index: -1;
+    }
+
+/* body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
     background-color: #fdf9f2;
     color: #2f2a26;
-}
+} */
 
 nav {
     position: fixed;
@@ -91,7 +124,7 @@ header {
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: radial-gradient(circle at top, #0f2f38, #07181d);
+    /* background: radial-gradient(circle at top, #0f2f38, #07181d); */
     color: #fff;
 }
 
@@ -173,7 +206,7 @@ header {
     margin: 15px 0;
 }
 
-.marquee {
+/* .marquee {
     margin: 12px auto 18px;
     overflow: hidden;
     white-space: nowrap;
@@ -186,7 +219,51 @@ header {
     font-family: 'Noto Serif Devanagari', serif;
     font-size: 16px;
     color: #e6d7b0;
-}
+} */
+
+ .mantra {
+      font-family: 'Noto Serif Devanagari', serif;
+      font-size: clamp(1.8rem, 6vw, 2.8rem);
+      color: var(--accent-saffron);
+      margin-bottom: 0.8rem;
+      animation: glowPulse 4s ease-in-out infinite alternate;
+    }
+
+    @keyframes glowPulse {
+      0% { text-shadow: 0 0 10px rgba(255,153,51,0.4); }
+      100% { text-shadow: 0 0 28px rgba(255,153,51,0.7); }
+    }
+
+    .marquee, .jayghosh {
+      font-family: 'Noto Serif Devanagari', serif;
+      font-size: clamp(1.1rem, 3.8vw, 1.4rem);
+      color: var(--text-light);
+      margin: 0.6rem 0;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .marquee span, .jayghosh span {
+      display: inline-block;
+      padding-left: 100%;
+      animation: scroll linear infinite;
+    }
+
+    .marquee span { animation-duration: 20s; }
+    .jayghosh-1 span { animation-duration: 14s; }
+    .jayghosh-2 span { animation-duration: 16s; animation-direction: reverse; }
+    .jayghosh-3 span { animation-duration: 18s; }
+
+    @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-100%); } }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3.2rem, 9vw, 5rem);
+      color: var(--primary-gold);
+      margin: 1rem 0 2rem;
+      text-shadow: 0 3px 12px rgba(212,160,23,0.3);
+    }
+
 
 @keyframes scrollText {
     from { transform: translateX(0); }
@@ -216,7 +293,7 @@ section {
 
 .container {
     max-width: 1000px;
-    margin: auto;
+    margin:0 auto;
 }
 
 #guruPage .container {
@@ -233,11 +310,13 @@ section {
 }
 
 .card {
-    background: #ffffff;
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border-gold);
     border-radius: 16px;
-    padding: clamp(20px, 4vw, 30px);
-    margin-bottom: 28px;
-    box-shadow: 0 10px 26px rgba(0,0,0,0.08);
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(59,46,31,0.12);
+    text-align: center;
 }
 
 .card p {
